@@ -10,6 +10,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -24,11 +25,11 @@ import java.util.List;
 @Service
 public class MessageServiceImpl implements MessageService {
 
-    @Autowired
+    @Resource
     private MessageDao messageDao;
 
     // 自动导入Java邮件发送实现类
-    @Autowired
+    @Resource
     private JavaMailSender javaMailSender;
 
     //存放迭代找出的所有子代的集合
@@ -116,15 +117,15 @@ public class MessageServiceImpl implements MessageService {
 
             String parentNickname = parentMessage.getNickname();
             String nickName = message.getNickname();
-            String comtent = "亲爱的" + parentNickname + "，您在【ONESTARの客栈】的评论收到了来自" + nickName + "的回复！内容如下：" + "\r\n" + "\r\n" +  message.getContent();
+            String comtent = "亲爱的" + parentNickname + "，您在【LiangFengの客栈】的评论收到了来自" + nickName + "的回复！内容如下：" + "\r\n" + "\r\n" +  message.getContent();
             String parentEmail = parentMessage.getEmail();
 
             // 发送邮件
             SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-            simpleMailMessage.setSubject("ONESTARの客栈评论回复");  //主题
+            simpleMailMessage.setSubject("LiangFengの客栈评论回复");  //主题
             simpleMailMessage.setText(comtent);   //内容
             simpleMailMessage.setTo(parentEmail); //接收者的邮箱
-            simpleMailMessage.setFrom("onestaryxk@163.com");//发送者邮箱
+            simpleMailMessage.setFrom("1637465932@qq.com");//发送者邮箱
             javaMailSender.send(simpleMailMessage);
         }
 

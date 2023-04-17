@@ -63,6 +63,10 @@
 <div id="waypoint" class="m-margin- animated fadeIn">
   <div class="ui container m-opacity box-shadow-max">
       <!--                新增留言-->
+      <div class="aligned five wide column" style="margin-top: 10px">
+          <!--                  <div class="ui active inline loader"></div>-->
+          <p style="color: red">新增邮件回复功能，回复将会通过邮件形式提醒</p>
+      </div>
 
       <div id="message-form" class="ui form">
           <input type="hidden" name="parentMessage.id" value="-1">
@@ -92,12 +96,8 @@
               </div>
               </div>
 
-              <div class="aligned five wide column" style="margin-top: 10px">
-<!--                  <div class="ui active inline loader"></div>-->
-                  <p style="color: red">新增邮件回复功能，回复将会通过邮件形式提醒</p>
-              </div>
 
-              <div class="right aligned two wide column">
+              <div class="five wide column">
               <div class="field m-mobile-wide m-margin-bottom-small">
                   <button id="messagepost-btn" type="button" class="ui teal button m-mobile-wide" onclick="javascript:{this.disabled=true;document.form1.submit();}" style="width:100px;height: 40px"><i class="edit icon"></i>发布</button>
               </div>

@@ -2,15 +2,15 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/myblog?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&serverTimezone=GMT%2B8
-    username: root
+    username: myblog
     password: 123
     hikari:
       max-lifetime: 500000
   mail:
-    host: smtp.163.com
-    username: xxx@163.com
-    address: xxx@163.com
-    password: xxx
+    host: smtp.qq.com
+    username: 1637465932@qq.com
+    address: 1637465932@qq.com
+    password: pnddphhmkmscbjjg
     default-encoding: utf-8
     protocol: smtp
     port: 25
